@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<div class="new-client-wrapper">
+  <a href="{% url 'client_create' %}" class="new-client">+ New Client</a>
+</div>
+    {% for client in client %}
+       <div class="client-entry">
+           <h2><a href="{% url 'client_detail' client.pk %}">{{client.name}}</a></h2>
+           <a>{{client.client_detail}}</a>
+
+       </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <h1> Edit Client</h1>
+
+    <form action="{% url 'client_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" value="Delete">
+    </form>
+
+
+
+{% endblock content %}
